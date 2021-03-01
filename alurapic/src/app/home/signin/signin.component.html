@@ -1,0 +1,51 @@
+<!-- <div class="container">
+    <h4 class="text-center">Login</h4>
+    <form [formGroup]="loginForm" class=" form-signin">
+
+        <div class="form-group">
+            <input #userNameInput class="form-control" formControlName="userName" placeholder="user name" autofocus>
+            <ap-vmessage text='User name is required' *ngIf="loginForm.get('userName').errors?.required"></ap-vmessage>
+
+        </div>
+
+        <div class="form-group">
+            <input type="password" formControlName="password" class="form-control" placeholder="password">
+            <ap-vmessage text='Password is required' *ngIf="loginForm.get('password').errors?.required"></ap-vmessage>
+        </div>
+
+        <button [disabled]="loginForm.invalid" (click)="login()" type="button" class="btn btn-primary btn-block">login</button>
+    </form>
+    <p>Not a user?<a>Register now</a></p>
+</div> -->
+
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <!-- Tabs Titles -->
+
+        <!-- Icon -->
+        <!-- <div class="fadeIn first">
+            <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+        </div> -->
+
+        <!-- Login Form -->
+        <form [formGroup]="loginForm">
+            <input #userNameInput formControlName="userName" autofocus type="text" id="login" class="fadeIn second text-left" name="login" placeholder="login">
+            <ap-vmessage class="text-left" text='User name is required' *ngIf="loginForm.get('userName').errors?.required"></ap-vmessage>
+
+            <input type="password" formControlName="password" id="password" class="fadeIn third text-left" name="login" placeholder="password">
+            <ap-vmessage class="text-left" text='User name is required' *ngIf="loginForm.get('password').errors?.required"></ap-vmessage>
+
+            <input type="submit" [disabled]="loginForm.invalid" class="fadeIn fourth" (click)="login()" value="Log In">
+            <!-- <button style="width: 200px;" [disabled]="loginForm.invalid" (click)="login()" type="button" class="btn btn-primary btn-block ">login</button> -->
+
+
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter">
+            <a class="underlineHover" href="#">Forgot Password?</a>
+        </div>
+
+    </div>
+</div>

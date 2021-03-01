@@ -1,5 +1,3 @@
-import { SearchComponent } from './search/search.component';
-import { CardModule } from './../../shared/components/card/card.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PhotoModule } from './../photo/photo.module';
@@ -7,7 +5,9 @@ import { FilterByDescription } from './filter-by-description.pipe';
 import { LoadButtonComponent } from './load-button/load-button.component';
 import { PhotoListComponent } from './photo-list.component';
 import { PhotosComponent } from './photos/photos.component';
-
+import { DarkeOnHouverModule } from 'src/app/shared/directives/darken-on-hover.module';
+import { CardModule } from 'src/app/shared/components/card/card.module';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
    declarations:[
@@ -20,7 +20,8 @@ import { PhotosComponent } from './photos/photos.component';
    imports:[
      CommonModule,
      PhotoModule,
-     CardModule
+     CardModule,
+     DarkeOnHouverModule
    ]
 })
 export class PhotoListModule{

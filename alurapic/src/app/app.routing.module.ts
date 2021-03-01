@@ -1,3 +1,4 @@
+import { SingnInComponent } from './home/signin/signin.component';
 import { PhotoListResolver } from './photos/photo-list/photo-list.resolver';
 import { NotFoundComponent } from './errors/not-found/not-found.component';
 import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
@@ -7,6 +8,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 // tslint:disable-next-line: one-variable-per-declaration
 const routes: Routes = [
+  {path: '', component: SingnInComponent},
   {path: 'user/:userName', component: PhotoListComponent,resolve:{photos:PhotoListResolver}},
   {path: 'p/add', component: PhotoFormComponent},
   {path: '**', component: NotFoundComponent}
