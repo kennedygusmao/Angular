@@ -1,3 +1,4 @@
+import { CoreModule } from './core/core.module';
 import { HomeModule } from './home/home.module';
 import { ErrorsModule } from './errors/errors.module';
 import { AppRoutingModule } from './app.routing.module';
@@ -16,7 +17,8 @@ import { AppComponent } from './app.component';
     PhotosModule,
     AppRoutingModule,
     ErrorsModule,
-    HomeModule
+    HomeModule,
+    CoreModule
 
   ],
   providers: [],

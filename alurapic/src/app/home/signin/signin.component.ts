@@ -1,3 +1,4 @@
+import { PlataformDetectorService } from './../../core/plataform-detector/plataform-detector.service';
 
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
@@ -17,7 +18,8 @@ export class SingnInComponent implements OnInit{
   constructor(
                private authService :AuthService,
                private formBuilder: FormBuilder,
-               private router: Router
+               private router: Router,
+               private plataformDetectorService: PlataformDetectorService
 
               ){}
 
@@ -43,7 +45,8 @@ export class SingnInComponent implements OnInit{
                     err=>{
                               console.log(err);
                               this.loginForm.reset();
-                              this.userNameInput.nativeElement.focus();
+                              this.plataformDetectorService.isPlatformBrower() &&
+                                    this.userNameInput.nativeElement.focus();
                               alert('Ivalid user name or password');
 
                     });

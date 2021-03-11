@@ -5,10 +5,11 @@ import { PhotoFormComponent } from './photos/photo-form/photo-form.component';
 import { PhotoListComponent } from './photos/photo-list/photo-list.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './core/auth/auth.guard';
 
 // tslint:disable-next-line: one-variable-per-declaration
 const routes: Routes = [
-  {path: '', component: SingnInComponent},
+  {path: '', component: SingnInComponent, canActivate:[AuthGuard]},
   {path: 'user/:userName', component: PhotoListComponent,resolve:{photos:PhotoListResolver}},
   {path: 'p/add', component: PhotoFormComponent},
   {path: '**', component: NotFoundComponent}
